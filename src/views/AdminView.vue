@@ -1,12 +1,9 @@
 <template>
-    <side-bar/>
-    <v-text>{{$route.params.title}}</v-text>
+  <side-bar />
+  <admin-header />
 </template>
   
 <script setup>
-import SideBar from '../components/SideBar.vue'
-// import { useRoute } from 'vue-router'
-
-// const route = useRoute();
-// console.log(route.params)
+import SideBar from "../components/SideBar.vue";
+import AdminHeader from "@/components/AdminHeader.vue";
 </script>

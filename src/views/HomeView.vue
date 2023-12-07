@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-  import HomeBanner from '@/components/HomeBanner.vue'
+import HomeBanner from "@/components/HomeBanner.vue";
 </script>
