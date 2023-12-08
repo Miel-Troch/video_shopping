@@ -2,6 +2,13 @@
   <v-navigation-drawer>
     <v-list nav>
       <v-list-item
+        prepend-icon="mdi-shape-plus"
+        title="category's"
+        value="category"
+        :active="path === '/admin/category'"
+        @click.prevent="click('category')"
+      />
+      <v-list-item
         prepend-icon="mdi-video-box"
         title="Video's"
         value="video"
@@ -14,13 +21,6 @@
         value="product"
         :active="path === '/admin/product'"
         @click.prevent="click('product')"
-      />
-      <v-list-item
-        prepend-icon="mdi-shape-plus"
-        title="category's"
-        value="category"
-        :active="path === '/admin/category'"
-        @click.prevent="click('category')"
       />
     </v-list>
   </v-navigation-drawer>

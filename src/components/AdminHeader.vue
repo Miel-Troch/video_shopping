@@ -1,7 +1,4 @@
 <template>
-  <!-- <v-container>
-    <h1>{{ $route.params.title }}</h1>
-  </v-container> -->
   <v-container fluid="true">
     <v-row class="xs-12" no-gutters>
       <v-col cols="11" offset="1">
@@ -18,6 +15,9 @@
         <h3 style="text-align: center; color: #0587c7">
           {{ $route.params.title }}
         </h3>
+      </v-col>
+      <v-col cols="2" offset="8">
+        <v-btn color="#0587c7">{{ `+ add ${$route.params.title}` }}</v-btn>
       </v-col>
     </v-row>
     <v-row class="xs-12" no-gutters>
