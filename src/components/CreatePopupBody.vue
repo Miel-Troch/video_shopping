@@ -2,7 +2,7 @@
   <v-card-item v-if="$route.params.title === 'category'">
     <v-form>
       <v-container>
-        <v-row>
+        <v-row  no-gutters>
           <v-col cols="12">
             <v-text-field
               v-model="categoryId"
@@ -18,10 +18,11 @@
       </v-container>
     </v-form>
   </v-card-item>
+
   <v-card-item v-else-if="$route.params.title === 'video'">
     <v-form>
       <v-container>
-        <v-row>
+        <v-row no-gutters>
           <v-col cols="12">
             <v-text-field v-model="videoId" type="number" label="ID" required />
           </v-col>
@@ -35,10 +36,11 @@
       </v-container>
     </v-form>
   </v-card-item>
+  
   <v-card-item v-else-if="$route.params.title === 'product'">
     <v-form>
       <v-container>
-        <v-row>
+        <v-row no-gutters>
           <v-col cols="12">
             <v-text-field
               v-model="productId"
