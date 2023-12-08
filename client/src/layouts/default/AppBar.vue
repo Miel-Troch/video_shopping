@@ -7,7 +7,7 @@
     <v-spacer />
     <v-btn
       icon="mdi-account-circle-outline"
-      @click="this.$router.push('/admin/video')"
+      @click="this.$router.push('/admin/category')"
     />
   </v-app-bar>
 </template>

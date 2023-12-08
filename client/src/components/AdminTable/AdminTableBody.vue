@@ -9,7 +9,7 @@
       </td>
     </tr>
   </tbody>
-  
+
   <tbody v-else-if="$route.params.title === 'video'">
     <tr v-for="i in videos" :key="i.id">
       <td>{{ i.id }}</td>
@@ -39,6 +39,26 @@
 <script setup>
 import EditPopup from "../EditPopup/EditPopup.vue";
 import DeletePopup from "../DeletePopup.vue";
+import axios from "axios";
+
+async function getAllCategorys() {
+  await axios.get("http://localhost:5000/api/category").then((res) => {
+    console.log(res);
+  });
+}
+
+async function getAllVideos() {
+  await axios.get("http://localhost:5000/api/video").then((res) => {
+    console.log(res);
+  });
+}
+
+async function getAllProducts() {
+  await axios.get("http://localhost:5000/api/product").then((res) => {
+    console.log(res);
+  });
+}
+
 const categorys = [
   {
     id: 1,
@@ -53,4 +73,8 @@ const categorys = [
     name: "Beauty & Personal Care",
   },
 ];
+
+getAllCategorys();
+getAllVideos();
+getAllProducts();
 </script>
