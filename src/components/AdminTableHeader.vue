@@ -1,19 +1,22 @@
 <template>
   <thead>
     <tr v-if="$route.params.title === 'category'">
-      <th class="text-left">ID</th>
-      <th class="text-left">Name</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
     </tr>
     <tr v-if="$route.params.title === 'video'">
-      <th class="text-left">ID</th>
-      <th class="text-left">Title</th>
-      <th class="text-left">videoUrl</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>videoUrl</th>
+      <th></th>
     </tr>
     <tr v-if="$route.params.title === 'product'">
-      <th class="text-left">ID</th>
-      <th class="text-left">Name</th>
-      <th class="text-left">Brand Name</th>
-      <th class="text-left">Price</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Brand Name</th>
+      <th>Price</th>
+      <th></th>
     </tr>
   </thead>
 </template>
