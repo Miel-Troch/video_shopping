@@ -40,39 +40,29 @@
 import EditPopup from "../EditPopup/EditPopup.vue";
 import DeletePopup from "../DeletePopup.vue";
 import axios from "axios";
+import { ref } from "vue";
+
+const categorys = ref({});
+const videos = ref();
+const products = ref();
 
 async function getAllCategorys() {
   await axios.get("http://localhost:5000/api/category").then((res) => {
-    console.log(res);
+    categorys.value = res.data;
   });
 }
 
 async function getAllVideos() {
   await axios.get("http://localhost:5000/api/video").then((res) => {
-    console.log(res);
+    videos.value = res.data;
   });
 }
 
 async function getAllProducts() {
   await axios.get("http://localhost:5000/api/product").then((res) => {
-    console.log(res);
+    products.value = res.data;
   });
 }
-
-const categorys = [
-  {
-    id: 1,
-    name: "Fashion",
-  },
-  {
-    id: 2,
-    name: "Electronics",
-  },
-  {
-    id: 3,
-    name: "Beauty & Personal Care",
-  },
-];
 
 getAllCategorys();
 getAllVideos();

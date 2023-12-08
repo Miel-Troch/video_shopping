@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Fashion",
+        "videos": [
+            {
+                "id": 1,
+                "title": "Elevate Your Everyday Style with Trendy Fall Fashion",
+                "videoUrl": "https://www.youtube.com/watch?v=yTPC4P77bcs",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "title": "Fall Outfit Essentials for Every Body Type",
+                "videourl": "https://m.youtube.com/watch?v=oh0mtPSwH-s",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "title": "Elevate Your Fall Wardrobe with Timeless Classics",
+                "videourl": "https://www.youtube.com/watch?v=v0scZA1_f60",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Electronics",
+        "videos": [
+            {
+                "id": 2,
+                "title": "Must-Have Tech Gadgets for 2024",
+                "videoUrl": "https://www.youtube.com/watch?v=8T7nOBno0UM",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "title": "The Best Smartphones for 2024",
+                "videourl": "https://www.youtube.com/watch?v=wCQ3poZOKM8",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "title": "Top-Rated Headphones for Every Budget",
+                "videourl": "https://www.youtube.com/watch?v=Qn2duvm_lv4",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Beauty & Personal Care",
+        "videos": [
+            {
+                "id": 3,
+                "title": "10 Beauty Hacks for Radiant Skin",
+                "videoUrl": "https://www.youtube.com/watch?v=B3n0lL8uTpM",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "title": "Overnight Skincare Routine: Smooth, Radiant Skin in Minutes",
+                "videourl": "https://m.youtube.com/watch?v=f1DowLpeqRk",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "title": "Natural Makeup Looks for Easy Everyday Beauty",
+                "videourl": "https://m.youtube.com/watch?v=NI7h5WOcixU",
+                "products": [
+                    {
+                        "id": 1,
+                        "name": "test",
+                        "brandName": "test brand",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    }
+]

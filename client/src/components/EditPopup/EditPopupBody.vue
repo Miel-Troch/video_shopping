@@ -76,41 +76,50 @@
   
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import axios from "axios";
 
-const categorys = [
-  {
-    id: 1,
-    name: "Fashion",
-  },
-  {
-    id: 2,
-    name: "Electronics",
-  },
-  {
-    id: 3,
-    name: "Beauty & Personal Care",
-  },
-];
+const { id } = defineProps(["id"]);
 
-const route = useRoute();
-const props = defineProps(["id"]);
+const categoryId = ref();
+const categoryName = ref();
 
-const categoryId = ref(
-  route.params.title === "category" ? props.id : undefined
-);
-const categoryName = ref(
-  route.params.title === "category"
-    ? categorys.find((i) => i.id === props.id).name
-    : undefined
-);
-
-const videoId = ref(route.params.title === "video" ? props.id : undefined);
+const videoId = ref();
 const videoTitle = ref();
 const videoUrl = ref();
 
-const productId = ref(route.params.title === "product" ? props.id : undefined);
+const productId = ref();
 const productName = ref();
 const productBrandName = ref();
 const productPrice = ref();
+
+async function getCategory() {
+  await axios.get(`http://localhost:5000/api/category/${id}`, { params: { id: id } }).then((res) => {
+    console.log(res);
+    categoryId.value = res.data.id;
+    categoryName.value = res.data.name;
+  });
+}
+async function getVideo() {
+  await axios.get(`http://localhost:5000/api/video/${id}`, { params: { id: id } }).then((res) => {
+    console.log(res);
+    videoId.value = res.data.id;
+    videoTitle.value = res.data.title;
+    videoUrl.value = res.data.videoUrl;
+  });
+}
+async function getProduct() {
+  await axios
+    .get(`http://localhost:5000/api/product/${id}`, { params: { id: id } })
+    .then((res) => {
+      console.log(res);
+      productId.value = res.data.id;
+      productName.value = res.data.name;
+      productBrandName.value = res.data.brandName;
+      productPrice.value = res.data.price;
+    });
+}
+
+getCategory();
+getVideo();
+getProduct();
 </script>
