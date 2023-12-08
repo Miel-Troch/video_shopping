@@ -17,7 +17,7 @@
         </h3>
       </v-col>
       <v-col cols="2" offset="8">
-        <v-btn color="#0587c7">{{ `+ add ${$route.params.title}` }}</v-btn>
+        <create-popup />
       </v-col>
     </v-row>
     <v-row class="xs-12" no-gutters>
@@ -33,4 +33,5 @@
 </template>
 
 <script setup>
+import CreatePopup from "./CreatePopup.vue";
 </script>
