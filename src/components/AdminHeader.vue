@@ -33,5 +33,5 @@
 </template>
 
 <script setup>
-import CreatePopup from "./CreatePopup.vue";
+import CreatePopup from "./CreatePopup/CreatePopup.vue";
 </script>

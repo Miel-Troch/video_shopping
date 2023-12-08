@@ -7,5 +7,5 @@
 <script setup>
 import SideBar from "../components/SideBar.vue";
 import AdminHeader from "@/components/AdminHeader.vue";
-import AdminTable from "@/components/AdminTable.vue";
+import AdminTable from "@/components/AdminTable/AdminTable.vue";
 </script>

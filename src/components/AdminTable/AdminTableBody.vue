@@ -37,8 +37,8 @@
 </template>
     
 <script setup>
-import EditPopup from "./EditPopup.vue";
-import DeletePopup from "./DeletePopup.vue";
+import EditPopup from "../EditPopup/EditPopup.vue";
+import DeletePopup from "../DeletePopup.vue";
 const categorys = [
   {
     id: 1,
