@@ -14,4 +14,17 @@ app.get('/:id', async (req, res) => {
   })
 })
 
+app.post('/', async (req, res) => {
+  await product
+    .create({
+      video_id: req.body.videoId,
+      name: req.body.name,
+      brandName: req.body.brandName,
+      price: req.body.price,
+    })
+    .then(() => {
+      res.sendStatus(200)
+    })
+})
+
 module.exports = app

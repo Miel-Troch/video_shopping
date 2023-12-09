@@ -14,4 +14,10 @@ app.get('/:id', async (req, res) => {
   })
 })
 
+app.post('/', async (req, res) => {
+  await category.create({ name: req.body.name }).then(() => {
+    res.sendStatus(200)
+  })
+})
+
 module.exports = app
