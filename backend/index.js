@@ -3,6 +3,7 @@ const cors = require('cors')
 var path = require('path')
 
 require('dotenv').config({ path: path.join(__dirname, '.env') })
+require('./Database.js')
 
 const app = express()
 app.use(cors())

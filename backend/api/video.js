@@ -1,13 +1,17 @@
 const express = require('express')
 const app = express.Router()
-const videos = require('../data/videos.json')
+const { video } = require('../Database')
 
 app.get('/', async (req, res) => {
-  res.send(videos)
+  await video.findAll().then((data) => {
+    res.send(data)
+  })
 })
 
 app.get('/:id', async (req, res) => {
-  res.send(videos.find((i) => i.id === parseInt(req.params.id)))
+  await video.findOne({ where: { id: req.params.id } }).then((data) => {
+    res.send(data)
+  })
 })
 
 module.exports = app

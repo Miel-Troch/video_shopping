@@ -1,12 +1,17 @@
 const express = require('express')
 const app = express.Router()
-const categorys = require('../data/categorys.json')
+const { category } = require('../Database')
 
 app.get('/', async (req, res) => {
-    res.send(categorys)
+  await category.findAll().then((data) => {
+    res.send(data)
+  })
 })
+
 app.get('/:id', async (req, res) => {
-    res.send(categorys.find((i) => i.id === parseInt(req.params.id)))
+  await category.findOne({ where: { id: req.params.id } }).then((data) => {
+    res.send(data)
+  })
 })
 
 module.exports = app
