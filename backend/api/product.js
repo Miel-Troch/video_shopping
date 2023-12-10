@@ -27,4 +27,20 @@ app.post('/', async (req, res) => {
     })
 })
 
+app.put('/:id', async (req, res) => {
+  await product
+    .update(
+      {
+        video_id: req.body.videoId,
+        name: req.body.name,
+        brandName: req.body.brandName,
+        price: req.body.price,
+      },
+      { where: { id: req.params.id } }
+    )
+    .then(() => {
+      res.sendStatus(200)
+    })
+})
+
 module.exports = app

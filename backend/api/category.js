@@ -20,4 +20,10 @@ app.post('/', async (req, res) => {
   })
 })
 
+app.put('/:id', async (req, res) => {
+  await category.update({ name: req.body.name }, { where: { id: req.params.id } }).then(() => {
+    res.sendStatus(200)
+  })
+})
+
 module.exports = app

@@ -22,4 +22,15 @@ app.post('/', async (req, res) => {
     })
 })
 
+app.put('/:id', async (req, res) => {
+  await video
+    .update(
+      { categoryId: req.body.categoryId, title: req.body.title, videoUrl: req.body.videoUrl },
+      { where: { id: req.params.id } }
+    )
+    .then(() => {
+      res.sendStatus(200)
+    })
+})
+
 module.exports = app

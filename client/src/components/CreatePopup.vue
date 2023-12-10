@@ -87,7 +87,7 @@
             v-if="$route.params.title === 'category'"
             text="Save"
             @click="
-              isActive = false;
+              isActive.value = false;
               postCategory();
             "
             color="#0587c7"
@@ -97,7 +97,7 @@
             v-else-if="$route.params.title === 'video'"
             text="Save"
             @click="
-              isActive = false;
+              isActive.value = false;
               postVideo();
             "
             color="#0587c7"
@@ -107,7 +107,7 @@
             v-if="$route.params.title === 'product'"
             text="Save"
             @click="
-              isActive = false;
+              isActive.value = false;
               postProduct();
             "
             color="#0587c7"
