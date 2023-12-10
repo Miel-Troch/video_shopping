@@ -26,4 +26,10 @@ app.put('/:id', async (req, res) => {
   })
 })
 
+app.delete('/:id', async (req, res) => {
+  await category.deleteAll({ where: { id: req.params.id } }).then(() => {
+    res.sendStatus(200)
+  })
+})
+
 module.exports = app

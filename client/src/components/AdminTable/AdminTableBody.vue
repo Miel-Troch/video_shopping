@@ -37,7 +37,7 @@
 </template>
     
 <script setup>
-import EditPopup from "../EditPopup/EditPopup.vue";
+import EditPopup from "../EditPopup.vue";
 import DeletePopup from "../DeletePopup.vue";
 import axios from "axios";
 import { ref } from "vue";
