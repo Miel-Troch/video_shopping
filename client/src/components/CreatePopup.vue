@@ -84,31 +84,10 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            v-if="$route.params.title === 'category'"
             text="Save"
             @click="
               isActive.value = false;
-              postCategory();
-            "
-            color="#0587c7"
-          />
-
-          <v-btn
-            v-else-if="$route.params.title === 'video'"
-            text="Save"
-            @click="
-              isActive.value = false;
-              postVideo();
-            "
-            color="#0587c7"
-          />
-
-          <v-btn
-            v-if="$route.params.title === 'product'"
-            text="Save"
-            @click="
-              isActive.value = false;
-              postProduct();
+              createClick();
             "
             color="#0587c7"
           />
@@ -122,6 +101,10 @@
 <script setup>
 import axios from "axios";
 import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
 
 const categoryName = ref();
 
@@ -134,13 +117,28 @@ const productName = ref();
 const productBrandName = ref();
 const productPrice = ref();
 
-async function postCategory() {
+function createClick() {
+  if (route.params.title === "category")
+    createCategory().then(() => {
+      router.go(0);
+    });
+  else if (route.params.title === "video")
+    createVideo().then(() => {
+      router.go(0);
+    });
+  else if (route.params.title === "product")
+    createProduct().then(() => {
+      router.go(0);
+    });
+}
+
+async function createCategory() {
   await axios.post("http://localhost:5000/api/category", {
     name: categoryName.value,
   });
 }
 
-async function postVideo() {
+async function createVideo() {
   await axios.post("http://localhost:5000/api/video", {
     categoryId: categoryId.value,
     title: videoTitle.value,
@@ -148,7 +146,7 @@ async function postVideo() {
   });
 }
 
-async function postProduct() {
+async function createProduct() {
   await axios.post("http://localhost:5000/api/product", {
     videoId: videoId.value,
     name: productName.value,

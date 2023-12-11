@@ -1,18 +1,17 @@
 <template>
   <thead>
     <tr v-if="$route.params.title === 'category'">
-      <th>ID</th>
       <th>Name</th>
       <th></th>
     </tr>
     <tr v-if="$route.params.title === 'video'">
-      <th>ID</th>
+      <th>Category ID</th>
       <th>Title</th>
       <th>videoUrl</th>
       <th></th>
     </tr>
     <tr v-if="$route.params.title === 'product'">
-      <th>ID</th>
+      <th>Video ID</th>
       <th>Name</th>
       <th>Brand Name</th>
       <th>Price</th>

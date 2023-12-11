@@ -86,31 +86,10 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            v-if="$route.params.title === 'category'"
             text="Save"
             @click="
               isActive.value = false;
-              putCategory();
-            "
-            color="#0587c7"
-          />
-
-          <v-btn
-            v-else-if="$route.params.title === 'video'"
-            text="Save"
-            @click="
-              isActive.value = false;
-              putVideo();
-            "
-            color="#0587c7"
-          />
-
-          <v-btn
-            v-if="$route.params.title === 'product'"
-            text="Save"
-            @click="
-              isActive.value = false;
-              putProduct();
+              editClick();
             "
             color="#0587c7"
           />
@@ -123,6 +102,10 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
 
 const { id } = defineProps(["id"]);
 
@@ -136,6 +119,21 @@ const videoId = ref();
 const productName = ref();
 const productBrandName = ref();
 const productPrice = ref();
+
+function editClick() {
+  if (route.params.title === "category")
+    editCategory().then(() => {
+      router.go(0);
+    });
+  else if (route.params.title === "video")
+    editVideo().then(() => {
+      router.go(0);
+    });
+  else if (route.params.title === "product")
+    editProduct().then(() => {
+      router.go(0);
+    });
+}
 
 async function getCategory() {
   await axios.get(`http://localhost:5000/api/category/${id}`).then((res) => {
@@ -151,26 +149,26 @@ async function getVideo() {
 }
 async function getProduct() {
   await axios.get(`http://localhost:5000/api/product/${id}`).then((res) => {
-    videoId.value = res.data.videoId;
+    videoId.value = res.data.video_id;
     productName.value = res.data.name;
     productBrandName.value = res.data.brandName;
     productPrice.value = res.data.price;
   });
 }
 
-async function putCategory() {
+async function editCategory() {
   await axios.put(`http://localhost:5000/api/category/${id}`, {
     name: categoryName.value,
   });
 }
-async function putVideo() {
+async function editVideo() {
   await axios.put(`http://localhost:5000/api/video/${id}`, {
     categoryId: categoryId.value,
     title: videoTitle.value,
     videoUrl: videoUrl.value,
   });
 }
-async function putProduct() {
+async function editProduct() {
   await axios.put(`http://localhost:5000/api/product/${id}`, {
     videoId: videoId.value,
     name: productName.value,
